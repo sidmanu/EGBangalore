@@ -36,7 +36,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 	'estore',
+	'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # ... include the providers you want to enable:
+    #'allauth.socialaccount.providers.facebook',
+    #'allauth.socialaccount.providers.google',
+    #'allauth.socialaccount.providers.twitter',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,3 +90,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # Required by `allauth` template tags
+	'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.request',
+)
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+#for allauth
+SITE_ID = '2' 
+
+LOGIN_REDIRECT_URL= '/'
+
+#settings for Authentication
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'

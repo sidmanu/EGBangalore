@@ -1,4 +1,7 @@
 {% load staticfiles %}
+{% load account %}
+{% load socialaccount %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,19 +52,22 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Items<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                <li><a href="books.html">Books</a></li>
+                                <li><a href="accessories.html">Accessories</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog.html">Blog</a></li> 
                         <li><a href="/estore/locate/">Locate</a></li>                        
+						{% if user.is_authenticated %}
+						<li style="color:white;"> Welcome {{user}} </li>
+                        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>                        
+						{% else %}
+						
+                        <li><a href="{% url 'account_login' %}">Log in</a></li>                        
+                        <li><a href="{% url 'account_signup' %}">Sign up</a></li>                        
+						{% endif %}
                     </ul>
                 </div>
 				            </div><!--/.container-->
@@ -83,7 +89,7 @@
 						</div>
 						<div class="media-body">
 							<h2>Have a question or need a custom quote?</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation +0123 456 70 80</p>
+							<p> Drop an email to siddharthmanu@gmail.com </p>
 						</div>
 					</div>
 				</div>
