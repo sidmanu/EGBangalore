@@ -50,8 +50,8 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
+                        <li {% if request.path == "/" %} class="active" {% endif %}><a href="/">Home</a></li>
+                        <li {% if request.path == "/estore/about-us/" %} class="active" {% endif %}><a href="/estore/about-us/">About us</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Items<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -59,7 +59,9 @@
                                 <li><a href="accessories.html">Accessories</a></li>
                             </ul>
                         </li>
-                        <li><a href="/estore/locate/">Locate</a></li>                        
+
+                        <li {% if request.path == "/estore/faq/" %} class="active" {% endif %}><a href="/estore/faq/">FAQs</a></li>
+                        <li {% if request.path == "/estore/locate/" %} class="active" {% endif %}><a href="/estore/locate/">Locate</a></li>
 						{% if user.is_authenticated %}
 						<li style="color:white;"> Welcome {{user}} </li>
                         <li><a href="{% url 'account_logout' %}">Sign Out</a></li>                        
@@ -81,26 +83,13 @@
 
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-			<div class="row">
-				<div class="col-sm-8">
-					<div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-						<div class="pull-left">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div class="media-body">
-							<h2>Have a question or need a custom quote?</h2>
-							<p> Drop an email to siddharthmanu@gmail.com </p>
-						</div>
-					</div>
-				</div>
-			</div>
 
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Company</h3>
                         <ul>
-                            <li><a href="#">About us</a></li>
+                            <li><a href="/estore/about/">About us</a></li>
                             <li><a href="#">Copyright</a></li>
                             <li><a href="#">Terms of use</a></li>
                             <li><a href="#">Privacy policy</a></li>
@@ -150,7 +139,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2015 <a target="_blank" href="mailto:siddharthmanu@gmail.com">Made by your friendly neighborhood YMD!</a>
+                    &copy; 2015 <a target="_blank" href="mailto:siddharthmanu@gmail.com">Made by your friendly neighborhood YMD ;)</a>
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

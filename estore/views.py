@@ -30,3 +30,11 @@ def locate(request):
 def contact(request):
 	context = {}
 	return render(request, 'estore/contact.html', context)
+
+def faq(request):
+	context = {}
+	return render(request, 'estore/faq.html', context)
+
+def about_us(request):
+	context = {}
+	return render(request, 'estore/about_us.html', context)
