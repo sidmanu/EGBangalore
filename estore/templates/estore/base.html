@@ -61,6 +61,7 @@
                         </li>
 
                         <li {% if request.path == "/estore/faq/" %} class="active" {% endif %}><a href="/estore/faq/">FAQs</a></li>
+                        <li {% if request.path == "/estore/events/" %} class="active" {% endif %}><a href="/estore/events/">Events</a></li>
                         <li {% if request.path == "/estore/locate/" %} class="active" {% endif %}><a href="/estore/locate/">Locate</a></li>
 						{% if user.is_authenticated %}
 						<li style="color:white;"> Welcome {{user}} </li>

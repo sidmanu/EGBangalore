@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<div class="row">
+
+<table style="font:4px">
+	{% for event in events%}
+		<tr>
+			<th><img style="height:81px;" class="img-responsive" src="{{event.image_url}}">
+			</th>
+			<td><h3>{{event.title}}</h3> </td>
+			<td>Date: {{event.event_date}} </td>
+			<td><a href="/estore/event/{{event.id}}/">More</a>
+			</td>
+		</tr>		
+	{%endfor%}
+</table>
+</div>

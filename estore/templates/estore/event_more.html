@@ -1,0 +1,51 @@
+{% extends "estore/base.html" %}
+{% load staticfiles %}
+
+{% block title %} Welcome to Eternal Ganges Bangalore! {% endblock %}
+
+{% block maincontent %}
+
+
+<section style="background:#000;">
+<div class="container">
+	<div class="row">
+
+
+				<div class="center">                
+					<h2>{{event.title}}</h2>
+					<p class="lead">{{event.event_short}}</p>
+				</div>
+				<div class="gmap-area">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-7 ">
+									<iframe src="{{event.map_url}}" style="border:0" allowfullscreen="" frameborder="0" height="400" width="500"></iframe>
+							</div>
+
+							<div class="col-sm-5 map-content">
+								<ul class="row">
+									<li class="col-sm-6">
+
+										<img src="{{event.image_url}}" style="height:290px" > </img>
+										<address>
+											<h5>Details</h5>
+											<p> {{event.event_detail}} </p>
+										</address>
+
+									</li>
+
+
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+					
+
+		
+	</div><!--/.row-->
+</div> <!-- /.container-->
+
+</section>
+{% endblock %}

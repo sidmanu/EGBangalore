@@ -1,9 +1,9 @@
 jQuery(function($) {'use strict',
 
-	//#main-slider
+	//#offers-slider - sid
 	$(function(){
-		$('#main-slider.carousel').carousel({
-			interval: 8000
+		$('#offers-carousel-slider.carousel').carousel({
+			interval: 3000
 		});
 	});
 
